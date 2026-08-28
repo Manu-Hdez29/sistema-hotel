@@ -12,9 +12,9 @@ El proyecto se desarrolla en dos fases:
 
 ## Integrantes del equipo
 
-| Manuel de Jesús Hernández Escamilla | Coordinador(a) / Gestión del Proyecto |
-| Manuel Enrique Miranda Rivas | FrontEnd (Figma, HTML, CSS, JavaScript) |
-| Walter Fabricio Salazar Consuegra | Diagramas en general y Base de Datos |
+- Manuel de Jesús Hernández Escamilla | Coordinador(a) / Gestión del Proyecto
+- Manuel Enrique Miranda Rivas | FrontEnd (Figma, HTML, CSS, JavaScript)
+- Walter Fabricio Salazar Consuegra | Diagramas en general y Base de Datos 
 
 ## Tecnologías utilizadas
 
@@ -28,9 +28,9 @@ El proyecto se desarrolla en dos fases:
 
 ## Estructura del repositorio
 
-backend/ : Código fuente de la API REST (Spring Boot)
-frontend/ : Interfaz de usuario (HTML, CSS, JS)
-docs/ : Documento técnico (PDF), diagramas y prototipos
+- backend/ : Código fuente de la API REST (Spring Boot)
+- frontend/ : Interfaz de usuario (HTML, CSS, JS)
+- docs/ : Documento técnico (PDF), diagramas y prototipos
 
 ## Tablero de seguimiento
 
