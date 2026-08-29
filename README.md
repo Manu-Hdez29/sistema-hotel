@@ -19,7 +19,8 @@ El proyecto se desarrolla en dos fases:
 ## Tecnologías utilizadas
 
 - Backend: Java, Spring Boot, Spring Data JPA
-- Base de datos: MySQL
+- Base de datos: Microsoft SQL Server
+- Diagrama entidad-relación: Lucidchart
 - Frontend: HTML, CSS, JavaScript
 - Prototipos: Figma
 - Control de versiones: GitHub
