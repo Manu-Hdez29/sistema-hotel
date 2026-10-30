@@ -1,0 +1,420 @@
+/* ===== Tokens de diseño ===== */
+:root {
+  --navy: #12214F;
+  --navy-2: #1B2F6B;
+  --gris-fondo: #F3F5F9;
+  --gris-borde: #E3E7EE;
+  --gris-suave: #EEF1F6;
+  --texto: #1E2433;
+  --muted: #6B7280;
+  --radio: 14px;
+  --sombra: 0 10px 30px rgba(18, 33, 79, 0.08);
+  --sombra-fuerte: 0 16px 40px rgba(18, 33, 79, 0.18);
+}
+
+/* Bootstrap: botones y enlaces en el azul marino de la marca */
+.btn-primary {
+  --bs-btn-bg: var(--navy);
+  --bs-btn-border-color: var(--navy);
+  --bs-btn-hover-bg: var(--navy-2);
+  --bs-btn-hover-border-color: var(--navy-2);
+  --bs-btn-active-bg: var(--navy-2);
+  --bs-btn-active-border-color: var(--navy-2);
+  --bs-btn-disabled-bg: var(--navy);
+  --bs-btn-disabled-border-color: var(--navy);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--navy);
+  --bs-btn-border-color: var(--navy);
+  --bs-btn-hover-bg: var(--navy);
+  --bs-btn-hover-border-color: var(--navy);
+  --bs-btn-active-bg: var(--navy);
+  --bs-btn-active-border-color: var(--navy);
+}
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--navy);
+}
+a { color: var(--navy); }
+.form-control:focus, .form-select:focus {
+  border-color: var(--navy-2);
+  box-shadow: 0 0 0 0.2rem rgba(27, 47, 107, 0.15);
+}
+.form-check-input:checked {
+  background-color: var(--navy);
+  border-color: var(--navy);
+}
+
+/* ===== Base ===== */
+body {
+  background: var(--gris-fondo);
+  color: var(--texto);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 { font-weight: 600; color: var(--navy); }
+.card {
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  background: #fff;
+}
+.table { --bs-table-bg: transparent; }
+.table thead.table-light th {
+  background: var(--gris-suave);
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+/* ===== Navegación ===== */
+.navbar.bg-dark {
+  background-color: var(--navy) !important;
+  box-shadow: 0 2px 12px rgba(18, 33, 79, 0.2);
+}
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Logo grande para login y registro */
+.logo-acceso {
+  display: block;
+  width: min(260px, 70%);
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+/* Isologo decorativo en la portada */
+.hero-deco {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  height: auto;
+  opacity: 0.08;
+  pointer-events: none;
+}
+@media (max-width: 767.98px) { .hero-deco { display: none; } }
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+}
+.navbar .nav-link:hover { color: #fff; }
+.navbar .nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ===== Portada (hero) ===== */
+.hero {
+  position: relative;
+  background:
+          linear-gradient(180deg, rgba(18, 33, 79, 0.55) 0%, rgba(18, 33, 79, 0.9) 100%),
+          url('../assets/hero-hotel.jpg') center / cover no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 460px;
+  padding: 3rem 0 12rem;
+  margin: -1.5rem 0 0;
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+}
+.hero-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+.hero-titulo {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+  max-width: 18ch;
+}
+.hero-texto {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 48ch;
+  margin-bottom: 0;
+}
+
+/* Buscador flotante sobre la portada */
+.buscador {
+  position: relative;
+  margin-top: -4.5rem;
+  box-shadow: var(--sombra-fuerte);
+  border: none;
+  z-index: 2;
+}
+.buscador .form-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+.buscador .form-control,
+.buscador .form-select {
+  border-radius: 10px;
+  border-color: var(--gris-borde);
+  background: var(--gris-suave);
+}
+
+/* ===== Resultados y tablas ===== */
+.tabla-scroll { overflow-x: auto; }
+.tarjeta-stat .fs-4 { word-break: break-word; }
+.tarjeta-stat { border-left: 4px solid var(--navy); }
+
+/* ===== Notificaciones ===== */
+.toast-contenedor {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1080;
+  width: min(380px, calc(100% - 2rem));
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.toast-item {
+  margin: 0;
+  animation: entrar 0.2s ease-out;
+}
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991.98px) {
+  .hero { padding: 3rem 0 9rem; border-radius: 0 0 22px 22px; }
+  .buscador { margin-top: -3.5rem; }
+}
+@media (max-width: 767.98px) {
+  .hero { margin: -1.5rem -16px 0; padding: 2.5rem 0 7.5rem; }
+  .hero-titulo { max-width: none; }
+  .buscador { margin-top: -3rem; }
+  .buscador .btn { width: 100%; }
+}
+@media (max-width: 575.98px) {
+  .card-body { padding: 1rem; }
+  .navbar-brand { font-size: 1rem; }
+}
+
+/* ===== Tarjetas de habitación ===== */
+.hab-card { overflow: hidden; transition: transform .15s ease, box-shadow .15s ease; }
+.hab-card:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.hab-img {
+  height: 170px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #DDE3EE, #C9D3E4);
+}
+.hab-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hab-mini {
+  height: 110px; border-radius: 10px;
+  background: linear-gradient(135deg, #DDE3EE, #C9D3E4);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: .8rem;
+}
+.resumen { position: sticky; top: 90px; }
+@media (max-width: 991.98px) { .resumen { position: static; } }
+
+/* ===== Indicador de pasos ===== */
+.stepper {
+  list-style: none; padding: 0; margin: 0 0 1.5rem;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  flex-wrap: nowrap; overflow-x: auto;
+}
+.stepper li { display: flex; align-items: center; gap: .5rem; color: var(--muted); font-size: .9rem; white-space: nowrap; }
+.stepper li + li::before { content: ""; width: 48px; height: 2px; background: var(--gris-borde); margin: 0 .25rem; }
+.stepper li.hecho + li::before, .stepper li.actual::before { background: var(--navy); }
+.stepper-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid var(--gris-borde); background: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-size: .85rem;
+}
+.stepper li.hecho .stepper-num { background: var(--navy); border-color: var(--navy); color: #fff; }
+.stepper li.actual { color: var(--navy); font-weight: 600; }
+.stepper li.actual .stepper-num { border-color: var(--navy); color: var(--navy); }
+@media (max-width: 575.98px) { .stepper li + li::before { width: 20px; } }
+
+/* ===== Opciones de servicio y método de pago ===== */
+.servicio-opcion {
+  display: flex; align-items: center; gap: .25rem;
+  border: 1px solid var(--gris-borde); border-radius: 10px;
+  padding: .6rem .8rem; cursor: pointer; margin: 0;
+}
+.servicio-opcion:hover { border-color: var(--navy-2); }
+.servicio-opcion .cantidad { width: 64px; }
+.metodo-opcion {
+  display: block; border: 1px solid var(--gris-borde); border-radius: 12px;
+  padding: 1rem; cursor: pointer; height: 100%; margin: 0;
+}
+.metodo-opcion:hover { border-color: var(--navy-2); }
+.metodo-opcion.activo { border: 2px solid var(--navy); background: #F7F9FD; }
+
+/* ===== Confirmación ===== */
+.check-circulo {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--navy); color: #fff; font-size: 2rem;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.check-circulo.pendiente { background: #B7791F; }
+
+/* ===== Acceso (login y registro) ===== */
+.acceso {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  max-width: 880px;
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--sombra-fuerte);
+}
+.acceso-ancho { max-width: 1040px; }
+.acceso-marca {
+  position: relative;
+  color: #fff;
+  padding: 3.5rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(160deg, #2A3F80 0%, #12214F 55%, #0B1633 100%);
+}
+.acceso-marca::before {
+  /* Anillo decorativo en la esquina */
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  right: -140px;
+  bottom: -140px;
+  pointer-events: none;
+}
+.acceso-iso {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 1.75rem;
+  position: relative;
+}
+.acceso-nombre {
+  color: #fff;
+  font-size: clamp(1.85rem, 2.6vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+  position: relative;
+}
+.acceso-eslogan {
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+  opacity: 0.95;
+  position: relative;
+}
+.acceso-pie {
+  opacity: 0.7;
+  margin: 0 auto;
+  max-width: 30ch;
+  position: relative;
+}
+.acceso-form {
+  padding: 3.5rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.acceso-cabecera {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+/* Centra el formulario en la altura de la ventana */
+.acceso-pagina {
+  min-height: calc(100vh - 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 991.98px) {
+  .acceso-pagina { min-height: 0; align-items: flex-start; }
+  .acceso { grid-template-columns: 1fr; margin-top: 0; border-radius: 22px; }
+  .acceso-marca { padding: 2.25rem 1.5rem 3.5rem; text-align: center; align-items: center; }
+  .acceso-marca::before { width: 240px; height: 240px; right: -120px; bottom: -120px; }
+  .acceso-iso { width: 92px; margin-bottom: 1rem; }
+  .acceso-nombre { font-size: 1.85rem; }
+  .acceso-eslogan { letter-spacing: 0.12em; font-size: 1rem; margin-bottom: 0.5rem; }
+  .acceso-pie { display: none; }
+  .acceso-form { padding: 2rem 1.5rem 2.25rem; }
+}
+
+/* ===== Vistas de administración: colores de la marca ===== */
+/* Pestañas de catálogos: inactivas en azul marino (no en el azul de Bootstrap) */
+.nav-pills .nav-link { color: var(--navy); font-weight: 500; }
+.nav-pills .nav-link:hover { background: var(--gris-suave); }
+.nav-pills .nav-link.active { color: #fff; }
+
+/* Notificaciones: debajo de la barra superior para no tapar los enlaces */
+.toast-contenedor { top: 6rem; }
+@media (max-width: 767.98px) { .toast-contenedor { top: 5.5rem; } }
+
+/* ===== Estructura general: contenido y barra con el mismo ancho ===== */
+.app-main {
+  max-width: none;
+  margin: 0 auto;
+  padding-left: clamp(24px, 4vw, 64px);
+  padding-right: clamp(24px, 4vw, 64px);
+}
+.app-nav {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0.75rem clamp(24px, 4vw, 64px);
+  min-height: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+.app-nav .navbar-collapse { flex-grow: 1; }
+.app-nav .navbar-brand {
+  font-size: 1.35rem;
+  margin-right: 0;
+  padding: 0;
+  gap: 0.75rem;
+}
+.marca-iso { height: 52px; width: auto; display: block; }
+.marca-texto { color: #fff; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
+.nav-usuario { color: #fff; }
+.nav-usuario .nombre { font-weight: 600; font-size: 0.92rem; line-height: 1.2; }
+.nav-usuario .rol { font-size: 0.72rem; opacity: 0.7; letter-spacing: 0.06em; }
+@media (max-width: 991.98px) {
+  .app-nav { gap: 0.5rem; }
+  .app-nav .navbar-collapse { padding: 0.5rem 0 0.75rem; }
+  .nav-usuario { justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid rgba(255, 255, 255, 0.12); margin-top: 0.5rem; }
+}
+@media (max-width: 767.98px) {
+  .app-main { padding-left: 16px; padding-right: 16px; }
+  .app-nav { padding: 0.6rem 16px; }
+  .marca-iso { height: 36px; }
+}
